@@ -113,7 +113,7 @@ package by.typing.vkontakte.wrapper
          */ 
         public function get stageWidth():Number
         {
-            return source.stageWidth();
+            return source.stageWidth;
         }
         
         //----------------------------------

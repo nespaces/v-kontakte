@@ -34,10 +34,10 @@ package by.typing.vkontakte.net
 		private var _photoID:String;
 		private var _loader:MultipartURLLoader;
 		
-		public function WallImageUploader(vkontakte:Vkontakte, wallID:String, fileData:ByteArray = null, 
+		public function WallImageUploader(wallID:String, fileData:ByteArray = null, 
                                           message:String = null, postID:String = null, photoID:String = null)
 		{
-			_vk = vkontakte;
+			_vk = Vkontakte.getInstance();
 			
 			_wallID = wallID;
 			_imageBytes = fileData;

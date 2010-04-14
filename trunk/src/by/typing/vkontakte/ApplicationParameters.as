@@ -17,23 +17,6 @@ package by.typing.vkontakte
     import by.typing.vkontakte.data.SettingsData;
     import by.typing.vkontakte.data.VkontakteData;
     
-    /*
-    
-    Недокументированные свойства:
-        parent_language	| 0
-        lc_name		    | 1738195_83a0b614d5a7d41d11fe63df1e1f5a0e
-        debug		    | 0 
-    
-    С использованием контейнера:
-        scale		    | 1
-        swf_url		    | http://cs4578.vkontakte.ru/u10189183/1e4da853dd0727.zip
-        height		    | 375
-        width		    | 500
-        domain		    | vkontakte.ru
-        stageScale	    | 1
-    
-    */
-    
     /**
      * Класс-обертка для параметров приложения.
      */

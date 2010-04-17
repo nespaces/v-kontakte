@@ -1,5 +1,6 @@
 package by.typing.vkontakte.commands.wall
 {
+    
     import by.typing.vkontakte.data.wall.PostData;
     import by.typing.vkontakte.events.VkontakteResponseEvent;
     import by.typing.vkontakte.net.VkontakteCall;

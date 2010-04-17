@@ -86,7 +86,7 @@ package by.typing.vkontakte.net
         
         private var method:String;
         private var v:String;
-        private var urlLoader:URLLoader;
+//        private var urlLoader:URLLoader;
         
         vkontakte_internal var parameters:ApplicationParameters;
         vkontakte_internal var isTestMode:Boolean;
@@ -148,7 +148,7 @@ package by.typing.vkontakte.net
         {
             try 
             {
-                urlLoader.close();
+                close();
             }
             catch (error:IOError) 
             {

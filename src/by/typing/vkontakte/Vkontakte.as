@@ -281,9 +281,11 @@ package by.typing.vkontakte
             if (event.error_code != VkontakteErrorCodes.TOO_MANY_REQUSTS)
                 return;
             
-            var command:VkontakteCall = VkontakteCall(event.target);
             
+            var command:VkontakteCall = VkontakteCall(event.target);
             processCommand(command);
+            
+            event.stopImmediatePropagation();
         }
         
         private function command_responseHandler(event:VkontakteResponseEvent):void

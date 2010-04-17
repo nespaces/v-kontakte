@@ -21,6 +21,7 @@ package by.typing.vkontakte.net
     
     import flash.errors.IOError;
     import flash.events.Event;
+    import flash.events.EventDispatcher;
     import flash.net.URLLoader;
     import flash.net.URLRequest;
     import flash.net.URLRequestMethod;
@@ -44,7 +45,7 @@ package by.typing.vkontakte.net
 	/**
 	 * 
 	 */
-    public class VkontakteCall extends URLLoader
+    public class VkontakteCall extends EventDispatcher
     {
         
         
@@ -86,7 +87,7 @@ package by.typing.vkontakte.net
         
         private var method:String;
         private var v:String;
-//        private var urlLoader:URLLoader;
+        private var urlLoader:URLLoader;
         
         vkontakte_internal var parameters:ApplicationParameters;
         vkontakte_internal var isTestMode:Boolean;
@@ -148,7 +149,7 @@ package by.typing.vkontakte.net
         {
             try 
             {
-                close();
+                urlLoader.close();
             }
             catch (error:IOError) 
             {
@@ -169,11 +170,9 @@ package by.typing.vkontakte.net
             request.data = variables;
             request.method = URLRequestMethod.POST;
             
-//            urlLoader = new URLLoader();
-//            urlLoader.addEventListener(Event.COMPLETE, urlLoader_completeHandler);
-//            urlLoader.load(request);
-            addEventListener(Event.COMPLETE, urlLoader_completeHandler);
-            load(request);
+            urlLoader = new URLLoader();
+            urlLoader.addEventListener(Event.COMPLETE, urlLoader_completeHandler);
+            urlLoader.load(request);
         }
         
         private function urlLoader_completeHandler(event:Event):void

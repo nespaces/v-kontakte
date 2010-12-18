@@ -28,7 +28,7 @@ package org.udaaff.social.vkontakte.commands
     {
         
         private static const METHOD:String = "getProfiles";
-        private static const V:String = "2.0";
+        
         
         /**
          * Создает объект <code>GetProfilesCommand</code>.
@@ -40,22 +40,22 @@ package org.udaaff.social.vkontakte.commands
          * @param name_case     Падеж для склонения имени и фамилии пользователя. 
          *                      Определяется набором констант из класса <code>Case</code>
          * 
-         * @see by.typing.vkontakte.commands.ProfileField
-         * @see by.typing.vkontakte.commands.Case
+         * @see org.udaaff.social.vkontakte.commands.ProfileField
+         * @see org.udaaff.social.vkontakte.commands.Case
          */        
         public function GetProfilesCommand(uids:Array /* of String */, 
                                            fields:Array /* of String */ = null, 
                                            name_case:String = null)
         {
-            super(METHOD, V);
+            super(METHOD);
             
-            variables.uids = uids.join(",");
+            _variables.uids = uids.join(",");
             
             if (fields)
-                variables.fields = fields.join(",");
+                _variables.fields = fields.join(",");
             
             if (name_case)
-                variables.name_case = name_case;
+                _variables.name_case = name_case;
         }        
         
         
@@ -75,7 +75,7 @@ package org.udaaff.social.vkontakte.commands
          */
         public function get uids():Array
         {
-            return variables.uids;
+            return _variables.uids;
         }
         
         /**
@@ -84,7 +84,7 @@ package org.udaaff.social.vkontakte.commands
         public function set uids(value:Array):void
         {
             if (value)
-                variables.uids = value.join(",");
+                _variables.uids = value.join(",");
         }
         
         //----------------------------------
@@ -97,7 +97,7 @@ package org.udaaff.social.vkontakte.commands
          * Параметр запроса.
          * Массив полей анкет, необходимых для получения.
          * 
-         * @see by.typing.vkontakte.commands.ProfileField
+         * @see org.udaaff.social.vkontakte.commands.ProfileField
          */
         public function get fields():Array
         {
@@ -122,7 +122,7 @@ package org.udaaff.social.vkontakte.commands
          * Параметр запроса.
          * Падеж для склонения имени и фамилии пользователя.
          * 
-         * @see by.typing.vkontakte.commands.Case
+         * @see org.udaaff.social.vkontakte.commands.Case
          */
         public function get name_case():String
         {
@@ -147,7 +147,7 @@ package org.udaaff.social.vkontakte.commands
          * Содержит массив объектов UserData.
          * Данное свойство заполняется только после операции загрузки ответа.
          * 
-         * @see by.typing.vkontakte.data.UserData
+         * @see org.udaaff.social.vkontakte.data.UserData
          */        
         public function get users():Array
         {

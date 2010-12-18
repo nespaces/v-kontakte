@@ -28,7 +28,7 @@ package org.udaaff.social.vkontakte.commands.photos
     {
         
         private static const METHOD:String = "photos.saveProfilePhoto";
-        private static const V:String = "2.0";
+        
         
         //--------------------------------------------------------------------------
         //
@@ -46,11 +46,11 @@ package org.udaaff.social.vkontakte.commands.photos
          */        
         public function SaveProfilePhotoCommand(server:String, photo:String, hash:String)
         {
-            super(METHOD, V);
+            super(METHOD);
             
-            variables.server = server;
-            variables.photo = photo;
-            variables.hash = hash;
+            _variables.server = server;
+            _variables.photo = photo;
+            _variables.hash = hash;
         }
         
         //--------------------------------------------------------------------------
@@ -68,7 +68,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */
         public function get server():String
         {
-            return variables.server;
+            return _variables.server;
         }
         
         /**
@@ -76,7 +76,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */
         public function set server(value:String):void
         {
-            variables.server = value;
+            _variables.server = value;
         }
         
         //----------------------------------
@@ -88,7 +88,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */
         public function get photo():String
         {
-            return variables.photo;
+            return _variables.photo;
         }
         
         /**
@@ -96,7 +96,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */
         public function set photo(value:String):void
         {
-            variables.photo = value;
+            _variables.photo = value;
         }
         
         //----------------------------------
@@ -108,7 +108,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */
         public function get hash():String
         {
-            return variables.hash;
+            return _variables.hash;
         }
         
         /**
@@ -116,7 +116,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */
         public function set hash(value:String):void
         {
-            variables.hash = value;
+            _variables.hash = value;
         }
         
         //----------------------------------
@@ -129,7 +129,7 @@ package org.udaaff.social.vkontakte.commands.photos
          * Содержит объект <code>ProfilePhotoData</code>.
          * Данное свойство заполняется только после операции загрузки ответа.
          * 
-         * @see by.typing.vkontakte.data.photos.ProfilePhotoData
+         * @see org.udaaff.social.vkontakte.data.photos.ProfilePhotoData
          */
         public function get profilePhoto():ProfilePhotoData
         {

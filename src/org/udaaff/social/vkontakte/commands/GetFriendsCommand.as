@@ -13,27 +13,27 @@
 
 package org.udaaff.social.vkontakte.commands
 {
+
+	import org.udaaff.social.vkontakte.events.VkontakteResponseEvent;
+	import org.udaaff.social.vkontakte.net.VkontakteCall;
+	import org.udaaff.social.vkontakte.vkontakte_internal;
     
-    import org.udaaff.social.vkontakte.events.VkontakteResponseEvent;
-    import org.udaaff.social.vkontakte.net.VkontakteCall;
-    import org.udaaff.social.vkontakte.vkontakte_internal;
     
     use namespace vkontakte_internal;
     /**
      * Возвращает список идентификаторов друзей текущего пользователя.
      */
-    public class GetFriendsCommand extends org.udaaff.social.vkontakte.net.VkontakteCall
+    public class GetFriendsCommand extends VkontakteCall
     {
         
         private static const METHOD:String = "getFriends";
-        private static const V:String = "2.0";
         
         /**
          * Создает объект <code>GetFriendsCommand</code>.
          */        
         public function GetFriendsCommand()
         {
-            super(METHOD, V);
+            super(METHOD);
         }
         
         //--------------------------------------------------------------------------

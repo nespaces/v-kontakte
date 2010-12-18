@@ -18,10 +18,10 @@ package org.udaaff.social.vkontakte.commands
      * Класс GetProfilesField является набором констант, 
      * определяющих поля анкет пользователей, необходимых для получения.
      * 
-     * @see by.typing.vkontakte.commands.GetProfilesCommand#GetProfilesCommand()
-     * @see by.typing.vkontakte.commands.GetProfilesCommand#fields
+     * @see org.udaaff.social.vkontakte.commands.GetProfilesCommand#GetProfilesCommand()
+     * @see org.udaaff.social.vkontakte.commands.GetProfilesCommand#fields
      */    
-    public class ProfileField
+    public final class ProfileField
     {
         
         /**
@@ -32,7 +32,7 @@ package org.udaaff.social.vkontakte.commands
         /**
          * Пол пользователя.
          * 
-         * @see by.typing.vkontakte.data.Sex
+         * @see org.udaaff.social.vkontakte.data.Sex
          */        
         public static const SEX:String = "sex";
         

@@ -27,7 +27,7 @@ package org.udaaff.social.vkontakte.commands.photos
     {
         
         private static const METHOD:String = "photos.editAlbum";
-        private static const V:String = "2.0";
+        
         
         //--------------------------------------------------------------------------
         //
@@ -50,18 +50,18 @@ package org.udaaff.social.vkontakte.commands.photos
          *                          Privacy.MY_FRIENDS_AND_FRIENDS_OF_FRIENDS.
          * @param description       Новый текст описания альбома.
          * 
-         * @see by.typing.data.Privacy
+         * @see org.udaaff.social.data.Privacy
          */        
         public function EditAlbumCommand(aid:String, title:String, privacy:uint = 0, 
                                          comment_privacy:uint = 0, description:String = "")
         {
-            super(METHOD, V);
+            super(METHOD);
             
-            variables.aid = aid;
-            variables.title = title;
-            variables.privacy = privacy;
-            variables.comment_privacy = comment_privacy;
-            variables.description = description;
+            _variables.aid = aid;
+            _variables.title = title;
+            _variables.privacy = privacy;
+            _variables.comment_privacy = comment_privacy;
+            _variables.description = description;
         }
         
         //--------------------------------------------------------------------------

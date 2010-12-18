@@ -18,7 +18,7 @@ package org.udaaff.social.vkontakte.commands
      * Набор констант определяющих значение параметра <code>type</code> 
      * конструктора класса <code>GetAdsCommand</code>.
      */ 
-    public class AdType
+    public final class AdType
     {
         
         /**

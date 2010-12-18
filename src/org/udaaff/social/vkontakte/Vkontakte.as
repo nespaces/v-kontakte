@@ -13,15 +13,18 @@
 
 package org.udaaff.social.vkontakte
 {
-    
-    import com.adobe.utils.ArrayUtil;
-    import flash.events.EventDispatcher;
-    import flash.events.TimerEvent;
-    import flash.utils.Timer;
-    import org.udaaff.social.vkontakte.errors.VkontakteErrorCodes;
-    import org.udaaff.social.vkontakte.errors.VkontakteErrorEvent;
-    import org.udaaff.social.vkontakte.events.VkontakteResponseEvent;
-    import org.udaaff.social.vkontakte.net.VkontakteCall;
+
+	import com.adobe.utils.ArrayUtil;
+
+	import org.udaaff.social.vkontakte.errors.VkontakteErrorCodes;
+	import org.udaaff.social.vkontakte.errors.VkontakteErrorEvent;
+	import org.udaaff.social.vkontakte.events.VkontakteResponseEvent;
+	import org.udaaff.social.vkontakte.net.VkontakteCall;
+
+	import flash.errors.IOError;
+	import flash.events.EventDispatcher;
+	import flash.events.TimerEvent;
+	import flash.utils.Timer;
     
     
 
@@ -109,50 +112,50 @@ package org.udaaff.social.vkontakte
         //  isTestMode
         //----------------------------------
         
-        private var _isTestMode:Boolean;
-        
-        /**
-         * Если это свойство равно <code>true</code>, то к данным приложения разрешаются тестовые
-         * запросы. При этом аутентификация не проводится и считается, что текущий 
-         * пользователь – это автор приложения. Это позволяет тестировать приложение 
-         * без загрузки его на сайт.
-         * 
-         * @default false
-         */        
-        public function get isTestMode():Boolean
-        {
-            return _isTestMode;
-        }
-        
-        /**
-         * @private
-         */
-        public function set isTestMode(value:Boolean):void
-        {
-            _isTestMode = value;
-        }
+//        private var _isTestMode:Boolean;
+//        
+//        /**
+//         * Если это свойство равно <code>true</code>, то к данным приложения разрешаются тестовые
+//         * запросы. При этом аутентификация не проводится и считается, что текущий 
+//         * пользователь – это автор приложения. Это позволяет тестировать приложение 
+//         * без загрузки его на сайт.
+//         * 
+//         * @default false
+//         */        
+//        public function get isTestMode():Boolean
+//        {
+//            return _isTestMode;
+//        }
+//        
+//        /**
+//         * @private
+//         */
+//        public function set isTestMode(value:Boolean):void
+//        {
+//            _isTestMode = value;
+//        }
         
         //----------------------------------
         //  privateKey
         //----------------------------------
         
-        private var _privateKey:String;
-        
-        /**
-         * Приватный ключ со страницы редактирования.
-         */        
-        public function get privateKey():String
-        {
-            return _privateKey;
-        }
-        
-        /**
-         * @private
-         */        
-        public function set privateKey(value:String):void
-        {
-            _privateKey = value;
-        }
+//        private var _privateKey:String;
+//        
+//        /**
+//         * Приватный ключ со страницы редактирования.
+//         */        
+//        public function get privateKey():String
+//        {
+//            return _privateKey;
+//        }
+//        
+//        /**
+//         * @private
+//         */        
+//        public function set privateKey(value:String):void
+//        {
+//            _privateKey = value;
+//        }
         
         //----------------------------------
         //  applicationParameters
@@ -197,7 +200,14 @@ package org.udaaff.social.vkontakte
             
             for each (var command:VkontakteCall in currentQueue)
             {
-                command.vkontakte_internal::close();
+            	try 
+	            {
+	                command.close();
+	            }
+	            catch (error:IOError) 
+	            {
+	                trace(error);
+	            }
             }
             
             commandQueues = [ [], [], [] ];
@@ -228,8 +238,8 @@ package org.udaaff.social.vkontakte
         public function call(command:VkontakteCall):void
         {
             command.vkontakte_internal::parameters = _applicationParameters;
-            command.vkontakte_internal::isTestMode = _isTestMode;
-            command.vkontakte_internal::privateKey = _privateKey;
+//            command.vkontakte_internal::isTestMode = _isTestMode;
+//            command.vkontakte_internal::privateKey = _privateKey;
             
             command.addEventListener(VkontakteErrorEvent.ERROR, command_errorHandler);
             command.addEventListener(VkontakteResponseEvent.RESPONSE, command_responseHandler);

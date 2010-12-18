@@ -27,7 +27,7 @@ package org.udaaff.social.vkontakte.commands.photos
     {
         
         private static const METHOD:String = "photos.move";
-        private static const V:String = "2.0";
+        
         
         //--------------------------------------------------------------------------
         //
@@ -46,13 +46,13 @@ package org.udaaff.social.vkontakte.commands.photos
          */        
         public function MoveCommand(pid:String, target_id:String, oid:String = "")
         {
-            super(METHOD, V);
+            super(METHOD);
             
-            variables.pid = pid;
-            variables.target_id = target_id;
+            _variables.pid = pid;
+            _variables.target_id = target_id;
             
             if (oid)
-                variables.oid = oid;
+                _variables.oid = oid;
         }
         
         //--------------------------------------------------------------------------
@@ -77,7 +77,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */
         public function get pid():String
         {
-            return variables.pid;
+            return _variables.pid;
         }
         
         /**
@@ -85,7 +85,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */
         public function set pid(value:String):void
         {
-            variables.pid = value;
+            _variables.pid = value;
         }
         
         //----------------------------------
@@ -97,7 +97,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */
         public function get target_id():String
         {
-            return variables.target_id;
+            return _variables.target_id;
         }
         
         /**
@@ -105,7 +105,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */
         public function set target_id(value:String):void
         {
-            variables.target_id = value;
+            _variables.target_id = value;
         }
         
         //----------------------------------
@@ -118,7 +118,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */
         public function get oid():String
         {
-            return variables.oid;
+            return _variables.oid;
         }
         
         /**
@@ -126,7 +126,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */
         public function set oid(value:String):void
         {
-            variables.oid = value;
+            _variables.oid = value;
         }
         
         //----------------------------------

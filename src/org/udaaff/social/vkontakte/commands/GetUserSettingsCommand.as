@@ -28,14 +28,14 @@ package org.udaaff.social.vkontakte.commands
     {
         
         private static const METHOD:String = "getUserSettings";
-        private static const V:String = "2.0";
+        
         
         /**
          * Создает объект <code>GetUserSettingsCommand</code>.
          */        
         public function GetUserSettingsCommand()
         {
-            super(METHOD, V);
+            super(METHOD);
         }        
         
         
@@ -55,7 +55,7 @@ package org.udaaff.social.vkontakte.commands
          * Содержит объект SettingsData.
          * Данное свойство заполняется только после операции загрузки ответа.
          * 
-         * @see by.typing.vkontakte.data.SettingsData
+         * @see org.udaaff.social.vkontakte.data.SettingsData
          */
         public function get settings():SettingsData
         {

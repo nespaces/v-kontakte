@@ -39,28 +39,28 @@ package org.udaaff.social.vkontakte.net
     /**
      * Отправляется после загрузки на сервер всех выбранных изображений.
      * 
-     * @eventType by.typing.vkontakte.events.LoaderEvent.UPLOAD_COMPLETE
+     * @eventType org.udaaff.social.vkontakte.events.LoaderEvent.UPLOAD_COMPLETE
      */	
     [Event(name="uploadComplete", type="org.udaaff.social.vkontakte.events.LoaderEvent")]
     
     /**
      * Отправляется после начала загрузки на сервер очередных данных.
      * 
-     * @eventType by.typing.vkontakte.events.LoaderEvent.OPEN
+     * @eventType org.udaaff.social.vkontakte.events.LoaderEvent.OPEN
      */	
     [Event(name="open", type="org.udaaff.social.vkontakte.events.LoaderEvent")]
     
     /**
      * Отправляется после успешного сохранения на сервере очередного изображения.
      * 
-     * @eventType by.typing.vkontakte.events.LoaderEvent.SAVE
+     * @eventType org.udaaff.social.vkontakte.events.LoaderEvent.SAVE
      */	
     [Event(name="save", type="org.udaaff.social.vkontakte.events.LoaderEvent")]
     
     /**
      * Отправляется в случае, если какой-либо из запросов возвращает ошибку.
      * 
-     * @eventType by.typing.vkontakte.errors.VkontakteErrorEvent.ERROR
+     * @eventType org.udaaff.social.vkontakte.errors.VkontakteErrorEvent.ERROR
      */	
     [Event(name="error", type="org.udaaff.social.vkontakte.errors.VkontakteErrorEvent")]
     
@@ -121,7 +121,7 @@ package org.udaaff.social.vkontakte.net
         /**
          * Массив объектов <code>PhotoData</code>.
          * 
-         * @see by.typing.data.photos.PhotoData
+         * @see org.udaaff.social.data.photos.PhotoData
          */
         public function get photos():Array
         {

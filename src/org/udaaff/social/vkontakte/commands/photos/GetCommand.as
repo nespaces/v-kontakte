@@ -28,7 +28,7 @@ package org.udaaff.social.vkontakte.commands.photos
     {
         
         private static const METHOD:String = "photos.get";
-        private static const V:String = "2.0";
+        
 
         
         /**
@@ -41,13 +41,13 @@ package org.udaaff.social.vkontakte.commands.photos
          */        
         public function GetCommand(uid:String, aid:String, pids:Array = null)
         {
-            super(METHOD, V);
+            super(METHOD);
             
-            variables.uid = uid;
-            variables.aid = aid;
+            _variables.uid = uid;
+            _variables.aid = aid;
             
             if (pids)
-                variables.pids = pids.join(",");
+                _variables.pids = pids.join(",");
             
         }
         
@@ -68,7 +68,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */
         public function get uid():String
         {
-            return variables.uid;
+            return _variables.uid;
         }
         
         /**
@@ -76,7 +76,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */
         public function set uid(value:String):void
         {
-            variables.uid = value;
+            _variables.uid = value;
         }
         
         //----------------------------------
@@ -89,7 +89,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */
         public function get aid():String
         {
-            return variables.aid;
+            return _variables.aid;
         }
         
         /**
@@ -97,7 +97,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */        
         public function set aid(value:String):void
         {
-            variables.aid = value;
+            _variables.aid = value;
         }
         
         //----------------------------------
@@ -110,7 +110,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */    
         public function get pids():Array
         {
-            return variables.pids;
+            return _variables.pids;
         }
         
         /**
@@ -118,7 +118,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */        
         public function set pids(value:Array):void
         {
-            variables.pids = value;
+            _variables.pids = value;
         }
         
         //----------------------------------
@@ -131,7 +131,7 @@ package org.udaaff.social.vkontakte.commands.photos
          * Содержит массив объектов <code>PhotoData</code>.
          * Данное свойство заполняется только после операции загрузки ответа.
          * 
-         * @see by.typing.vkontakte.data.photos.PhotoData
+         * @see org.udaaff.social.vkontakte.data.photos.PhotoData
          */
         public function get photos():Array
         {

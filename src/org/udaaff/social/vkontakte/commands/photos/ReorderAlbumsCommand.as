@@ -27,7 +27,7 @@ package org.udaaff.social.vkontakte.commands.photos
     {
         
         private static const METHOD:String = "photos.reorderAlbums";
-        private static const V:String = "2.0";
+        
         
         //--------------------------------------------------------------------------
         //
@@ -46,14 +46,14 @@ package org.udaaff.social.vkontakte.commands.photos
          */                       
         public function ReorderAlbumsCommand(aid:String, before:String, after:String, oid:String = "")
         {
-            super(METHOD, V);
+            super(METHOD);
             
-            variables.aid = aid;
-            variables.before = before;
-            variables.after = after;
+            _variables.aid = aid;
+            _variables.before = before;
+            _variables.after = after;
             
             if (oid)
-                variables.oid = oid;
+                _variables.oid = oid;
         }
         
         //--------------------------------------------------------------------------

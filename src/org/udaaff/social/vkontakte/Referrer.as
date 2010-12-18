@@ -17,7 +17,7 @@ package org.udaaff.social.vkontakte
     /**
      * Набор констант, определяющих значения параметра referrer.
      */ 
-    public class Referrer
+    public final class Referrer
     {
         
         /**

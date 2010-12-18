@@ -28,7 +28,7 @@ package org.udaaff.social.vkontakte.commands
     {
         
         private static const METHOD:String = "getAds";
-        private static const V:String = "2.0";
+        
         
         //--------------------------------------------------------------------------
         //
@@ -48,20 +48,20 @@ package org.udaaff.social.vkontakte.commands
          *                      в сотых долях голоса. Применяется только при выборке из 
          *                      прямых объявлений. По умолчанию равен 0.
          * 
-         * @see by.typing.vkontakte.commands.AdType
+         * @see org.udaaff.social.vkontakte.commands.AdType
          */        
         public function GetAdsCommand(count:uint = 1, type:uint = 3, 
                                       apps_ids:Array = null, min_price:int = 0)
         {
-            super(METHOD, V);
+            super(METHOD);
             
-            variables.count = count;
-            variables.type = type;
+            _variables.count = count;
+            _variables.type = type;
             
             if (apps_ids)
-                variables.apps_ids = apps_ids.join(",");
+                _variables.apps_ids = apps_ids.join(",");
             
-            variables.min_price = min_price;
+            _variables.min_price = min_price;
         }
         
         //--------------------------------------------------------------------------

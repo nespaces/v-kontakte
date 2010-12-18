@@ -28,7 +28,7 @@ package org.udaaff.social.vkontakte.commands.photos
     {
         
         private static const METHOD:String = "photos.save";
-        private static const V:String = "2.0";
+        
         
         
         /**
@@ -42,12 +42,12 @@ package org.udaaff.social.vkontakte.commands.photos
          */        
         public function SaveCommand(aid:String, server:String, photos_list:String, hash:String)
         {
-            super(METHOD, V);
+            super(METHOD);
             
-            variables.aid = aid;
-            variables.server = server;
-            variables.photos_list = photos_list;
-            variables.hash = hash;
+            _variables.aid = aid;
+            _variables.server = server;
+            _variables.photos_list = photos_list;
+            _variables.hash = hash;
         }
         
         
@@ -67,7 +67,7 @@ package org.udaaff.social.vkontakte.commands.photos
          * Содержит массив объектов <code>PhotoData</code>.
          * Данное свойство заполняется только после операции загрузки ответа.
          * 
-         * @see by.typing.vkontakte.data.photos.PhotoData
+         * @see org.udaaff.social.vkontakte.data.photos.PhotoData
          */
         public function get photos():Array
         {

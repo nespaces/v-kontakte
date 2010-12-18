@@ -30,13 +30,13 @@ package org.udaaff.social.vkontakte.commands
      * ошибку 148 (Access to the menu of the user denied). Избежать этой ошибки 
      * можно с помощью GetUserSettingsCommand.
      * 
-     * @see by.typing.vkontakte.commands.GetUserSettingsCommand
+     * @see org.udaaff.social.vkontakte.commands.GetUserSettingsCommand
      */
     public class SetNameInMenuCommand extends VkontakteCall
     {
         
         private static const METHOD:String = "setNameInMenu";
-        private static const V:String = "2.0";
+        
             
         //--------------------------------------------------------------------------
         //
@@ -53,9 +53,9 @@ package org.udaaff.social.vkontakte.commands
          */        
         public function SetNameInMenuCommand(name:String)
         {
-            super(METHOD, V);
+            super(METHOD);
             
-            variables.name = name;
+            _variables.name = name;
         }
         
         
@@ -75,7 +75,7 @@ package org.udaaff.social.vkontakte.commands
          */
         public function get appName():String
         {
-            return variables.name;
+            return _variables.name;
         }
         
         /**
@@ -83,7 +83,7 @@ package org.udaaff.social.vkontakte.commands
          */        
         public function set appName(value:String):void
         {
-            variables.name = value;
+            _variables.name = value;
         }
         
         //----------------------------------

@@ -28,7 +28,6 @@ package org.udaaff.social.vkontakte.commands.photos
     {
         
         private static const METHOD:String = "photos.getUploadServer";
-        private static const V:String = "2.0";
         
         /**
          * Создает объект <code>GetUploadServerCommand</code>.
@@ -42,10 +41,10 @@ package org.udaaff.social.vkontakte.commands.photos
          */        
         public function GetUploadServerCommand(aid:String, save_big:Boolean = false)
         {
-            super(METHOD, V);
+            super(METHOD);
             
-            variables.aid = aid;
-            variables.save_big = save_big;
+            _variables.aid = aid;
+            _variables.save_big = save_big;
         }
         
         
@@ -65,7 +64,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */    
         public function get aid():String
         {
-            return variables.aid;
+            return _variables.aid;
         }
         
         /**
@@ -73,7 +72,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */        
         public function set aid(value:String):void
         {
-            variables.aid = value;
+            _variables.aid = value;
         }
         
         //----------------------------------
@@ -89,7 +88,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */
         public function get save_big():Boolean
         {
-            return variables.save_big;
+            return _variables.save_big;
         }
         
         /**
@@ -97,7 +96,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */
         public function set save_big(value:Boolean):void
         {
-            variables.save_big = value;
+            _variables.save_big = value;
         }
         
         //----------------------------------
@@ -110,7 +109,7 @@ package org.udaaff.social.vkontakte.commands.photos
          * Содержит объект <code>UploadServerData</code>.
          * Данное свойство заполняется только после операции загрузки ответа.
          * 
-         * @see by.typing.vkontakte.data.photos.UploadServerData
+         * @see org.udaaff.social.vkontakte.data.photos.UploadServerData
          */
         public function get uploadServerData():UploadServerData
         {

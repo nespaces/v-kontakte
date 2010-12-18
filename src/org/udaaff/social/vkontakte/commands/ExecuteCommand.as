@@ -28,7 +28,7 @@ package org.udaaff.social.vkontakte.commands
     {
         
         private static const METHOD:String = "execute";
-        private static const V:String = "2.0";
+        
         
         //--------------------------------------------------------------------------
         //
@@ -47,9 +47,9 @@ package org.udaaff.social.vkontakte.commands
          */        
         public function ExecuteCommand(code:String)
         {
-            super(METHOD, V);
+            super(METHOD);
             
-            variables.code = code;
+            _variables.code = code;
         }
         
         
@@ -70,7 +70,7 @@ package org.udaaff.social.vkontakte.commands
          */ 
         public function get code():String
         {
-            return variables.code;
+            return _variables.code;
         }
         
         /**
@@ -78,7 +78,7 @@ package org.udaaff.social.vkontakte.commands
          */        
         public function set code(value:String):void
         {
-            variables.code = value;
+            _variables.code = value;
         }
         
         //--------------------------------------------------------------------------

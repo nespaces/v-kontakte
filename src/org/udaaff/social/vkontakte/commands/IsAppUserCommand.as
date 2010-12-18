@@ -28,7 +28,7 @@ package org.udaaff.social.vkontakte.commands
     {
         
         private static const METHOD:String = "isAppUser";
-        private static const V:String = "2.0";
+        
         
         /**
          * Создает объект <code>IsAppUserCommand</code>.
@@ -38,10 +38,10 @@ package org.udaaff.social.vkontakte.commands
          */        
         public function IsAppUserCommand(uid:String = null)
         {
-            super(METHOD, V);
+            super(METHOD);
             
             if (uid)
-                variables.uid = uid;
+                _variables.uid = uid;
         }        
         
         
@@ -61,7 +61,7 @@ package org.udaaff.social.vkontakte.commands
          */
         public function get():String
         {
-            return variables.uid;
+            return _variables.uid;
         }
         
         /**
@@ -69,7 +69,7 @@ package org.udaaff.social.vkontakte.commands
          */
         public function set(value:String):void
         {
-            variables.uid = value;
+            _variables.uid = value;
         }
         
         //----------------------------------

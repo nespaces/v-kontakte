@@ -27,14 +27,14 @@ package org.udaaff.social.vkontakte.commands
     {
         
         private static const METHOD:String = "getGroups";
-        private static const V:String = "2.0";
+        
         
         /**
          * Создает объект <code>GetGroupsCommand</code>.
          */        
         public function GetGroupsCommand()
         {
-            super(METHOD, V);
+            super(METHOD);
         }
     
         //--------------------------------------------------------------------------

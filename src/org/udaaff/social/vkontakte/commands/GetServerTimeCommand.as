@@ -27,7 +27,7 @@ package org.udaaff.social.vkontakte.commands
     {
         
         private static const METHOD:String = "getServerTime";
-        private static const V:String = "2.0";
+        
         
         //--------------------------------------------------------------------------
         //
@@ -41,7 +41,7 @@ package org.udaaff.social.vkontakte.commands
          */        
         public function GetServerTimeCommand()
         {
-            super(METHOD, V);
+            super(METHOD);
         }
         
         //--------------------------------------------------------------------------

@@ -28,7 +28,7 @@ package org.udaaff.social.vkontakte.commands.photos
     {
         
         private static const METHOD:String = "photos.getAlbums";
-        private static const V:String = "2.0";
+        
         
         /**
          * Создает объект <code>GetAlbumsCommand</code>.
@@ -40,13 +40,13 @@ package org.udaaff.social.vkontakte.commands.photos
          */        
         public function GetAlbumsCommand(uid:String = null, aids:Array /* of String */ = null)
         {
-            super(METHOD, V);
+            super(METHOD);
                 
             if (uid)
-                variables.uid = uid;
+                _variables.uid = uid;
             
             if (aids)
-                variables.aids = aids.join(",");
+                _variables.aids = aids.join(",");
         }
         
         
@@ -66,7 +66,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */
         public function get uid():String
         {
-            return variables.uid;
+            return _variables.uid;
         }
         
         /**
@@ -74,7 +74,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */
         public function set uid(value:String):void
         {
-            variables.uid = value;
+            _variables.uid = value;
         }
         
         //----------------------------------
@@ -89,7 +89,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */
         public function get aids():Array
         {
-            return variables.aids;
+            return _variables.aids;
         }
         
         /**
@@ -100,7 +100,7 @@ package org.udaaff.social.vkontakte.commands.photos
             if (!value)
                 return;
             
-            variables.aids = value.join(",");
+            _variables.aids = value.join(",");
         }
         
         //----------------------------------
@@ -114,7 +114,7 @@ package org.udaaff.social.vkontakte.commands.photos
 		 * массива объектов <code>AlbumData</code>.
          * Данное свойство заполняется только после операции загрузки ответа.
          * 
-         * @see by.typing.vkontakte.data.photos.AlbumData
+         * @see org.udaaff.social.vkontakte.data.photos.AlbumData
          */
         public function get albums():Array
         {

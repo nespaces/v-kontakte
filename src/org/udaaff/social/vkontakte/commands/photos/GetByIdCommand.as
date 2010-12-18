@@ -28,7 +28,7 @@ package org.udaaff.social.vkontakte.commands.photos
     {
         
         private static const METHOD:String = "photos.getById";
-        private static const V:String = "2.0";
+        
         
         //--------------------------------------------------------------------------
         //
@@ -47,9 +47,9 @@ package org.udaaff.social.vkontakte.commands.photos
          */        
         public function GetByIdCommand(photos:Array)
         {
-            super(METHOD, V);
+            super(METHOD);
             
-            variables.photos = photos.join(",");
+            _variables.photos = photos.join(",");
         }
         
         //--------------------------------------------------------------------------
@@ -71,7 +71,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */
         public function get ids():Array
         {
-            return variables.photos;
+            return _variables.photos;
         }
         
         /**
@@ -82,7 +82,7 @@ package org.udaaff.social.vkontakte.commands.photos
             if (!value)
                 return;
             
-            variables.photos = value.join(",");
+            _variables.photos = value.join(",");
         }
         
         //----------------------------------
@@ -96,7 +96,7 @@ package org.udaaff.social.vkontakte.commands.photos
 		 * массива объектов <code>PhotoData</code>.
          * Данное свойство заполняется только после операции загрузки ответа.
          * 
-         * @see by.typing.vkontakte.data.photos.PhotoData
+         * @see org.udaaff.social.vkontakte.data.photos.PhotoData
          */
         public function get photos():Array
         {

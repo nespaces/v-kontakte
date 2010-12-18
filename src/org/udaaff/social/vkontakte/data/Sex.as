@@ -17,7 +17,7 @@ package org.udaaff.social.vkontakte.data
     /**
      * Набор констант, определяющих пол пользователя.
      */
-    public class Sex
+    public final class Sex
     {
         
         /**

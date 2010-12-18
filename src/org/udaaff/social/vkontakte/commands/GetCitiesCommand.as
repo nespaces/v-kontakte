@@ -29,7 +29,7 @@ package org.udaaff.social.vkontakte.commands
     {
         
         private static const METHOD:String = "getCities";
-        private static const V:String = "2.0";
+        
         
         //--------------------------------------------------------------------------
         //
@@ -44,9 +44,9 @@ package org.udaaff.social.vkontakte.commands
          */        
         public function GetCitiesCommand(cids:Array /* of String */)
         {
-            super(METHOD, V);
+            super(METHOD);
             
-            variables.cids = cids.join(",");
+            _variables.cids = cids.join(",");
         }
         
         //--------------------------------------------------------------------------
@@ -65,7 +65,7 @@ package org.udaaff.social.vkontakte.commands
          */
         public function get cids():Array
         {
-            return variables.cids;
+            return _variables.cids;
         }
         
         /**
@@ -73,7 +73,7 @@ package org.udaaff.social.vkontakte.commands
          */
         public function set cids(value:Array):void
         {
-            variables.cids = value;
+            _variables.cids = value;
         }
         
         //----------------------------------
@@ -86,7 +86,7 @@ package org.udaaff.social.vkontakte.commands
          * Содержит массив объектов <code>CityData</code>.
          * Данное свойство заполняется только после операции загрузки ответа.
          * 
-         * @see by.typing.vkontakte.data.CityData
+         * @see org.udaaff.social.vkontakte.data.CityData
          */        
         public function get cities():Array
         {

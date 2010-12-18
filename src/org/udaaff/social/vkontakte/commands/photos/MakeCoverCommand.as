@@ -27,7 +27,7 @@ package org.udaaff.social.vkontakte.commands.photos
     {
         
         private static const METHOD:String = "photos.makeCover";
-        private static const V:String = "2.0";
+        
         
         //--------------------------------------------------------------------------
         //
@@ -45,13 +45,13 @@ package org.udaaff.social.vkontakte.commands.photos
          */        
         public function MakeCoverCommand(pid:String, aid:String, oid:String = "")
         {
-            super(METHOD, V);
+            super(METHOD);
             
-            variables.pid = pid;
-            variables.aid = aid;
+            _variables.pid = pid;
+            _variables.aid = aid;
             
             if (oid)
-                variables.oid = oid;
+                _variables.oid = oid;
         }
         
         //--------------------------------------------------------------------------

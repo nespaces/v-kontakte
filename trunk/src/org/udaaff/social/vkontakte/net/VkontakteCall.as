@@ -60,7 +60,7 @@ package org.udaaff.social.vkontakte.net
 		 * @param method		Название метода API из общего списка функций.
 		 * @param verision	  Версия API.
 		 */		
-		public function VkontakteCall(method:String, v:String = "3.0")
+		public function VkontakteCall(method:String)
 		{
 			super();
 			

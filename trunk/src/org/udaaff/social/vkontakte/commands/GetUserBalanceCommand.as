@@ -27,14 +27,14 @@ package org.udaaff.social.vkontakte.commands
     {
         
         private static const METHOD:String = "getUserBalance";
-        private static const V:String = "2.0";
+        
         
         /**
          * Создает объект <code>GetUserBalanceCommand</code>.
          */        
         public function GetUserBalanceCommand()
         {
-            super(METHOD, V);
+            super(METHOD);
         }
         
         

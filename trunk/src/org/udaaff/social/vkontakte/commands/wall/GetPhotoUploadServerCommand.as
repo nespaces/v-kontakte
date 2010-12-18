@@ -17,7 +17,7 @@ package org.udaaff.social.vkontakte.commands.wall
     public class GetPhotoUploadServerCommand extends VkontakteCall 
     {
         private static const METHOD:String = "wall.getPhotoUploadServer";
-        private static const V:String = "2.0";
+        
         
         private var _upload_url:String;
         
@@ -27,7 +27,7 @@ package org.udaaff.social.vkontakte.commands.wall
          */        
         public function GetPhotoUploadServerCommand() 
         {
-            super(METHOD, V);
+            super(METHOD);
         }
         
         //---------------------------------------------------

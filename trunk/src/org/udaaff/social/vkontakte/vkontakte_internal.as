@@ -13,5 +13,5 @@
 
 package org.udaaff.social.vkontakte
 {
-    public namespace vkontakte_internal = "http://vkontakte.typing.by";
+    public namespace vkontakte_internal = "http://udaaff.org";
 }

@@ -46,35 +46,35 @@ package org.udaaff.social.vkontakte.net
 	 * Отправляется после загрузки данных всех объектов <code>FileReference</code>
 	 * массива <code>fileList</code>. 
 	 * 
-	 * @eventType by.typing.vkontakte.events.LoaderEvent.LOAD_COMPLETE
+	 * @eventType org.udaaff.social.vkontakte.events.LoaderEvent.LOAD_COMPLETE
 	 */	
 	[Event(name="loadComplete", type="org.udaaff.social.vkontakte.events.LoaderEvent")]
 	
 	/**
 	 * Отправляется после загрузки на сервер всех выбранных изображений.
 	 * 
-	 * @eventType by.typing.vkontakte.events.LoaderEvent.UPLOAD_COMPLETE
+	 * @eventType org.udaaff.social.vkontakte.events.LoaderEvent.UPLOAD_COMPLETE
 	 */	
 	[Event(name="uploadComplete", type="org.udaaff.social.vkontakte.events.LoaderEvent")]
 	
 	/**
 	 * Отправляется после начала загрузки на сервер очередного изображения.
 	 * 
-	 * @eventType by.typing.vkontakte.events.LoaderEvent.OPEN
+	 * @eventType org.udaaff.social.vkontakte.events.LoaderEvent.OPEN
 	 */	
 	[Event(name="open", type="org.udaaff.social.vkontakte.events.LoaderEvent")]
 	
 	/**
 	 * Отправляется после успешного сохранения на сервере очередного изображения.
 	 * 
-	 * @eventType by.typing.vkontakte.events.LoaderEvent.SAVE
+	 * @eventType org.udaaff.social.vkontakte.events.LoaderEvent.SAVE
 	 */	
 	[Event(name="save", type="org.udaaff.social.vkontakte.events.LoaderEvent")]
 	
 	/**
 	 * Отправляется в случае, если какой-либо из запросов возвращает ошибку.
 	 * 
-	 * @eventType by.typing.vkontakte.errors.VkontakteErrorEvent.error
+	 * @eventType org.udaaff.social.vkontakte.errors.VkontakteErrorEvent.error
 	 */	
 	[Event(name="error", type="org.udaaff.social.vkontakte.errors.VkontakteErrorEvent")]
 	

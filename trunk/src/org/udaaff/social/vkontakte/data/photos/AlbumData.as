@@ -72,7 +72,7 @@ package org.udaaff.social.vkontakte.data.photos
         /**
          * Уровень доступа к альбому. 
          * 
-         * @see by.typing.vkontakte.data.Privacy
+         * @see org.udaaff.social.vkontakte.data.Privacy
          */        
         public var privacy:uint;
         

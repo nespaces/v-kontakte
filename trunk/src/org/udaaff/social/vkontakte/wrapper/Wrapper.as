@@ -30,7 +30,7 @@ package org.udaaff.social.vkontakte.wrapper
     /**
      * Событие происходит, когда пользователь изменяет настройки приложений.
      * 
-     * @eventType by.typing.vkontakte.events.SettingsEvent.ON_SETTINGS_CHANGED
+     * @eventType org.udaaff.social.vkontakte.events.SettingsEvent.ON_SETTINGS_CHANGED
      */    
     [Event(name="onSettingsChanged", type="org.udaaff.social.vkontakte.events.SettingsEvent")]
     
@@ -40,14 +40,14 @@ package org.udaaff.social.vkontakte.wrapper
      * Этот параметр можно использовать только для вывода пользователю. 
      * Достоверность баланса всегда нужно проверять с помощью метода <code>secure.getBalance</code>.
      * 
-     * @eventType by.typing.vkontakte.events.BalanceEvent.ON_BALANCE_CHANGED
+     * @eventType org.udaaff.social.vkontakte.events.BalanceEvent.ON_BALANCE_CHANGED
      */    
     [Event(name="onBalanceChanged", type="org.udaaff.social.vkontakte.events.BalanceEvent")]
     
     /**
      * Событие происходит, когда пользователь добавляет приложение к себе на страницу.
      * 
-     * @eventType by.typing.vkontakte.events.WrapperEvent.ON_APPLICATION_ADDED
+     * @eventType org.udaaff.social.vkontakte.events.WrapperEvent.ON_APPLICATION_ADDED
      */    
     [Event(name="onApplicationAdded", type="org.udaaff.social.vkontakte.events.WrapperEvent")]
     
@@ -55,7 +55,7 @@ package org.udaaff.social.vkontakte.wrapper
      * Событие происходит, когда пользователь подтвердил сохранение фотографии в окне, 
      * вызванном с помощью функции <code>showProfilePhotoBox</code>.  
      * 
-     * @eventType by.typing.vkontakte.events.WrapperEvent.ON_PROFILE_PHOTO_SAVE
+     * @eventType org.udaaff.social.vkontakte.events.WrapperEvent.ON_PROFILE_PHOTO_SAVE
      */    
     [Event(name="onProfilePhotoSave", type="org.udaaff.social.vkontakte.events.WrapperEvent")]
     
@@ -63,7 +63,7 @@ package org.udaaff.social.vkontakte.wrapper
      * Событие происходит, когда окно с приложением теряет фокус. 
      * Например, когда пользователь открывает окно с настройками приложения. 
      * 
-     * @eventType by.typing.vkontakte.events.WrapperEvent.ON_WINDOW_BLUR
+     * @eventType org.udaaff.social.vkontakte.events.WrapperEvent.ON_WINDOW_BLUR
      */    
     [Event(name="onWindowBlur", type="org.udaaff.social.vkontakte.events.WrapperEvent")]
     
@@ -71,7 +71,7 @@ package org.udaaff.social.vkontakte.wrapper
      * Событие происходит, когда окно с приложением получает фокус. 
      * Например, когда пользователь закрывает окно с настройками приложения. 
      * 
-     * @eventType by.typing.vkontakte.events.WrapperEvent.ON_WINDOW_FOCUS
+     * @eventType org.udaaff.social.vkontakte.events.WrapperEvent.ON_WINDOW_FOCUS
      */    
     [Event(name="onWindowFocus", type="org.udaaff.social.vkontakte.events.WrapperEvent")]
     
@@ -79,7 +79,7 @@ package org.udaaff.social.vkontakte.wrapper
      * Событие происходит, когда пользователь переносит указатель мыши за пределы окна приложения. 
      * Это событие является аналогом <code>Event.MOUSE_LEAVE</code> объекта <code>stage</code>.
      * 
-     * @eventType by.typing.vkontakte.events.WrapperEvent.ON_MOUSE_LEAVE
+     * @eventType org.udaaff.social.vkontakte.events.WrapperEvent.ON_MOUSE_LEAVE
      */    
     [Event(name="onMouseLeave", type="org.udaaff.social.vkontakte.events.WrapperEvent")]
     
@@ -87,7 +87,7 @@ package org.udaaff.social.vkontakte.wrapper
      * Событие происходит, когда размер окна приложения был изменен. 
      * Параметры <code>width</code> и <code>height</code> содержат новые размеры приложения в пикселах.
      * 
-     * @eventType by.typing.vkontakte.events.ResizeEvent.ON_WINDOW_RESIZED
+     * @eventType org.udaaff.social.vkontakte.events.ResizeEvent.ON_WINDOW_RESIZED
      */
     [Event(name="onWindowResized", type="org.udaaff.social.vkontakte.events.ResizeEvent")]
     
@@ -97,7 +97,7 @@ package org.udaaff.social.vkontakte.wrapper
      * использования кнопок "назад" и "вперед" в браузере. 
      * Данное событие происходит всегда при запуске приложения.
      * 
-     * @eventType by.typing.vkontakte.events.LocationEvent.ON_LOCATION_CHANGED
+     * @eventType org.udaaff.social.vkontakte.events.LocationEvent.ON_LOCATION_CHANGED
      */
     [Event(name="onLocationChanged", type="org.udaaff.social.vkontakte.events.LocationEvent")]
     

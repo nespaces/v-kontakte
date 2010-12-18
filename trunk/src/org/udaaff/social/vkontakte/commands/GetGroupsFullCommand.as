@@ -29,7 +29,7 @@ package org.udaaff.social.vkontakte.commands
     {
         
         private static const METHOD:String = "getGroupsFull";
-        private static const V:String = "2.0";
+        
         
         /**
          * Создает объект <code>GetGroupsFullCommand</code>.
@@ -41,10 +41,10 @@ package org.udaaff.social.vkontakte.commands
          */        
         public function GetGroupsFullCommand(gids:Array /* of String */ = null)
         {
-            super(METHOD, V);
+            super(METHOD);
             
             if (gids)
-                variables.gids = gids.join(",");
+                _variables.gids = gids.join(",");
         }
         
         
@@ -65,7 +65,7 @@ package org.udaaff.social.vkontakte.commands
          */
         public function get gids():Array
         {
-            return variables.gids;
+            return _variables.gids;
         }
         
         /**
@@ -76,7 +76,7 @@ package org.udaaff.social.vkontakte.commands
             if (!value)
                 return;
             
-            variables.gids = value.join(",");
+            _variables.gids = value.join(",");
         }
         
         //----------------------------------
@@ -90,7 +90,7 @@ package org.udaaff.social.vkontakte.commands
          * Содержит массив объектов <code>GroupData</code>.
          * Данное свойство заполняется только после операции загрузки ответа.
          * 
-         * @see by.typing.vkontakte.data.GroupData
+         * @see org.udaaff.social.vkontakte.data.GroupData
          */
         public function get groups():Array
         {

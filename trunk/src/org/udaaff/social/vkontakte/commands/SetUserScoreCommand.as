@@ -27,7 +27,7 @@ package org.udaaff.social.vkontakte.commands
     {
         
         private static const METHOD:String = "setUserScore";
-        private static const V:String = "2.0";
+        
         
         /**
          * Создает объект <code>SetUserScoreCommand</code>.
@@ -36,9 +36,9 @@ package org.udaaff.social.vkontakte.commands
          */        
         public function SetUserScoreCommand(score:Number)
         {
-            super(METHOD, V);
+            super(METHOD);
             
-            variables.score = String(score);
+            _variables.score = String(score);
         }    
         
         //--------------------------------------------------------------------------
@@ -57,7 +57,7 @@ package org.udaaff.social.vkontakte.commands
          */    
         public function get score():Number
         {
-            return Number(variables.score);
+            return Number(_variables.score);
         }
         
         /**
@@ -65,7 +65,7 @@ package org.udaaff.social.vkontakte.commands
          */
         public function set score(value:Number):void
         {
-            variables.score = String(value);
+            _variables.score = String(value);
         }
         
         //----------------------------------

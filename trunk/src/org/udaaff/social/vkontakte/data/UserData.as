@@ -51,7 +51,7 @@ package org.udaaff.social.vkontakte.data
         /**
          * Пол пользователя.
          * 
-         * @see by.typing.vkontakte.data.Sex
+         * @see org.udaaff.social.vkontakte.data.Sex
          */    
         public var sex:int;
         
@@ -64,7 +64,7 @@ package org.udaaff.social.vkontakte.data
          * Id города, указанного у пользователя в разделе "Контакты". 
          * Название города по его id можно узнать при помощи класса GetCitiesCommand.
          * 
-         * @see by.typing.vkontakte.commands.GetCitiesCommand 
+         * @see org.udaaff.social.vkontakte.commands.GetCitiesCommand 
          */        
         public var city:String;
         
@@ -72,7 +72,7 @@ package org.udaaff.social.vkontakte.data
          * Id страны, указанной у пользователя в разделе "Контакты". 
          * Название страны по её id можно узнать при помощи класса GetCountriesCommand.
          * 
-         * @see by.typing.vkontakte.commands.GetCountriesCommand 
+         * @see org.udaaff.social.vkontakte.commands.GetCountriesCommand 
          */        
         public var country:String;
         

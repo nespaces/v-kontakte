@@ -28,7 +28,7 @@ package org.udaaff.social.vkontakte.commands.photos
     {
         
         private static const METHOD:String = "photos.createAlbum";
-        private static const V:String = "2.0";
+        
         
         //--------------------------------------------------------------------------
         //
@@ -43,18 +43,18 @@ package org.udaaff.social.vkontakte.commands.photos
          * @param privacy        Уровень доступа к альбому.
          * @param description    Текст описания альбома.
          * 
-         * @see by.typing.vkontakte.data.Privacy
+         * @see org.udaaff.social.vkontakte.data.Privacy
          */        
         public function CreateAlbumCommand(title:String, privacy:uint = 0, 
                                            description:String = null)
         {
-            super(METHOD, V);
+            super(METHOD);
             
-            variables.title = title;
-            variables.privacy = privacy;
+            _variables.title = title;
+            _variables.privacy = privacy;
             
             if (description)
-                variables.description = description;
+                _variables.description = description;
         }
         
         //--------------------------------------------------------------------------
@@ -73,7 +73,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */
         public function get title():String
         {
-            return variables.title;
+            return _variables.title;
         }
         
         /**
@@ -81,7 +81,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */
         public function set title(value:String):void
         {
-            variables.title = value;
+            _variables.title = value;
         }
         
         //----------------------------------
@@ -93,11 +93,11 @@ package org.udaaff.social.vkontakte.commands.photos
          * Уровень доступа к альбому.
          * 
          * @default Privacy.MY_FRIENDS_AND_FRIENDS_OF_FRIENDS
-         * @see by.typing.vkontakte.data.Privacy
+         * @see org.udaaff.social.vkontakte.data.Privacy
          */
         public function get privacy():uint
         {
-            return variables.privacy;
+            return _variables.privacy;
         }
         
         /**
@@ -105,7 +105,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */
         public function set privacy(value:uint):void
         {
-            variables.privacy = value;
+            _variables.privacy = value;
         }
         
         //----------------------------------
@@ -120,7 +120,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */
         public function get description():String
         {
-            return variables.description;
+            return _variables.description;
         }
         
         /**
@@ -128,7 +128,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */
         public function set description(value:String):void
         {
-            variables.description = value;
+            _variables.description = value;
         }
         
         //----------------------------------

@@ -13,41 +13,40 @@
 
 package org.udaaff.social.vkontakte.net
 {
-    
-    import flash.errors.IOError;
-    import flash.events.Event;
-    import flash.events.EventDispatcher;
-    import flash.net.URLLoader;
-    import flash.net.URLRequest;
-    import flash.net.URLRequestMethod;
-    import org.udaaff.social.vkontakte.ApplicationParameters;
-    import org.udaaff.social.vkontakte.errors.VkontakteErrorEvent;
-    import org.udaaff.social.vkontakte.events.VkontakteResponseEvent;
-    import org.udaaff.social.vkontakte.vkontakte_internal;
-    
+
+	import org.udaaff.social.vkontakte.ApplicationParameters;
+	import org.udaaff.social.vkontakte.errors.VkontakteErrorEvent;
+	import org.udaaff.social.vkontakte.events.VkontakteResponseEvent;
+	import org.udaaff.social.vkontakte.vkontakte_internal;
+
+	import flash.events.Event;
+	import flash.net.URLLoader;
+	import flash.net.URLRequest;
+	import flash.net.URLRequestMethod;
     
     use namespace vkontakte_internal;
     
     /**
      * Отправляется, когда запрос возвращает ошибку.
      * 
-     * @eventType by.typing.vkontakte.errors.VkontakteErrorEvent.ERROR
+     * @eventType org.udaaff.social.vkontakte.errors.VkontakteErrorEvent.ERROR
      */
     [Event(name="error", type="org.udaaff.social.vkontakte.errors.VkontakteErrorEvent")]
     
     /**
      * Отправляется, когда запрос возвращает ответ.
      * 
-     * @eventType by.typing.vkontakte.events.VkontakteResponseEvent.RESPONSE
+     * @eventType org.udaaff.social.vkontakte.events.VkontakteResponseEvent.RESPONSE
      */    
     [Event(name="response", type="org.udaaff.social.vkontakte.events.VkontakteResponseEvent")]
     
 	/**
 	 * 
 	 */
-    public class VkontakteCall extends EventDispatcher
+    public class VkontakteCall extends URLLoader
     {
         
+        public static const V:String = "3.0";
         
         //--------------------------------------------------------------------------
         //
@@ -61,16 +60,15 @@ package org.udaaff.social.vkontakte.net
          * @param method        Название метода API из общего списка функций.
          * @param verision      Версия API.
          */        
-        public function VkontakteCall(method:String, version:String)
+        public function VkontakteCall(method:String, v:String = "3.0")
         {
             super();
             
-            this.method = method;
-            this.v = version;
+            _method = method;
             
-            variables = new VkontakteVariables();
-            variables.method = method;
-            variables.v = version;
+            _variables = new VkontakteVariables();
+            _variables.method = method;
+            _variables.v = V;
         }
         
         
@@ -83,15 +81,13 @@ package org.udaaff.social.vkontakte.net
         /**
          * Переменные отправляемые в запросе. 
          */        
-        protected var variables:VkontakteVariables;
+        protected var _variables:VkontakteVariables;
         
-        private var method:String;
-        private var v:String;
-        private var urlLoader:URLLoader;
+        private var _method:String;
         
         vkontakte_internal var parameters:ApplicationParameters;
-        vkontakte_internal var isTestMode:Boolean;
-        vkontakte_internal var privateKey:String;
+//        vkontakte_internal var isTestMode:Boolean;
+//        vkontakte_internal var privateKey:String;
         
         
         //--------------------------------------------------------------------------
@@ -109,19 +105,7 @@ package org.udaaff.social.vkontakte.net
          */
         public function get name():String
         {
-            return method;
-        }
-        
-        //----------------------------------
-        //  version
-        //----------------------------------
-        
-        /**
-         * Версия метода.
-         */
-        public function get version():String
-        {
-            return v;
+            return _method;
         }
         
         //----------------------------------
@@ -145,34 +129,22 @@ package org.udaaff.social.vkontakte.net
         //
         //--------------------------------------------------------------------------
         
-        vkontakte_internal function close():void
-        {
-            try 
-            {
-                urlLoader.close();
-            }
-            catch (error:IOError) 
-            {
-                trace(error);
-            }
-        }
-        
         vkontakte_internal function execute():void
         {
-            variables.api_id = parameters.api_id;
+            _variables.api_id = parameters.api_id;
+//            if (isTestMode)
+//                _variables.test_mode = 1;
             
-            if (isTestMode)
-                variables.test_mode = 1;
-            
-            variables.buildSignature(parameters.viewer_id, privateKey);
+//            _variables.buildSignature(parameters.viewer_id, privateKey);
+			_variables.buildSignature(parameters.viewer_id, parameters.secret);
+            _variables.sid = parameters.sid;
             
             var request:URLRequest = new URLRequest(parameters.api_url);
-            request.data = variables;
+            request.data = _variables;
             request.method = URLRequestMethod.POST;
             
-            urlLoader = new URLLoader();
-            urlLoader.addEventListener(Event.COMPLETE, urlLoader_completeHandler);
-            urlLoader.load(request);
+            addEventListener(Event.COMPLETE, urlLoader_completeHandler);
+            load(request);
         }
         
         private function urlLoader_completeHandler(event:Event):void

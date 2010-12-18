@@ -28,14 +28,14 @@ package org.udaaff.social.vkontakte.commands
     {
         
         private static const METHOD:String = "getHighScores";
-        private static const V:String = "2.0";
+        
         
         /**
          * Создает объект <code>GetHighScoresCommand</code>.
          */        
         public function GetHighScoresCommand()
         {
-            super(METHOD, V);
+            super(METHOD);
         }
         
         private var _scoreInfo:Array;
@@ -44,7 +44,7 @@ package org.udaaff.social.vkontakte.commands
          * Содерижт массив объектов <code>ScoreInfoData</code>.
          * Данное свойство заполняется только после операции загрузки ответа.
          * 
-         * @see by.typing.vkontakte.data.ScoreInfoData
+         * @see org.udaaff.social.vkontakte.data.ScoreInfoData
          */
         public function get scoreInfo():Array
         {

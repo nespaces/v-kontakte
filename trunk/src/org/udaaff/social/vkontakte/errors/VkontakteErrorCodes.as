@@ -18,7 +18,7 @@ package org.udaaff.social.vkontakte.errors
      * Класс VkontakteErrorCodes содержит набор констант, определяющих коды основных 
      * ошибок.
      */
-    public class VkontakteErrorCodes
+    public final class VkontakteErrorCodes
     {
         
         /**

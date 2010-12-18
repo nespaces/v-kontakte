@@ -37,12 +37,6 @@ package org.udaaff.social.vkontakte
             super(parameters);
         }
         
-        //--------------------------------------------------------------------------
-        //
-        //  Основные параметры
-        //
-        //--------------------------------------------------------------------------
-        
         /**
          * Адрес сервиса API, по которому необходимо осуществлять запросы.  
          */        
@@ -63,11 +57,6 @@ package org.udaaff.social.vkontakte
          * Id сессии для осуществления запросов к API.
          */
         public var sid:String;
-        
-        /**
-         * Секрет, необходимый для осуществления подписи запросов к API.
-         */
-        public var secret:String;
         
         /**
          * Id группы, со страницы которой было запущено приложение. 
@@ -110,12 +99,6 @@ package org.udaaff.social.vkontakte
          */
         public var api_settings:SettingsData;
         
-        //--------------------------------------------------------------------------
-        //
-        //  Дополнительные параметры
-        //
-        //--------------------------------------------------------------------------
-        
         /**
          * Содержит строку с информацией о том, откуда было запущено приложение.
          * Параметр referrer может принимать следующие значения: 
@@ -141,25 +124,80 @@ package org.udaaff.social.vkontakte
         {
             var o:Object = Object(data);
             
-            api_url = o.api_url;
-            api_id = o.api_id;
             user_id = o.user_id;
-            sid = o.sid;
-            secret = o.secret;
-            group_id = o.group_id;
-            viewer_id = o.viewer_id;
+            api_id = o.api_id;
             is_app_user = Boolean(int(o.is_app_user));
-            viewer_type = uint(o.viewer_type);
-            auth_key = o.auth_key;
             language = uint(o.language);
+            group_id = o.group_id;
+            auth_key = o.auth_key;
+            viewer_id = o.viewer_id;
+            viewer_type = uint(o.viewer_type);
             api_result = o.api_result;
             api_settings = new SettingsData(uint(o.api_settings));
-            
+            api_url = o.api_url;
             referrer = o.referrer;
             poster_id = o.poster_id;
             post_id = o.post_id;
+            
+            
+            parent_language = o.parent_language;
+            lc_name = o.lc_name;
+            debug = o.debug;
+            
+            scale = o.scale;
+            swf_url = o.swf_url;
+            height = o.heigth;
+            width = o.width;
+            domain = o.domain;
+            stageScale = o.stageScale;
         }
         
+        
+        /**
+         * Недокументированный параметр
+         */        
+        public var parent_language:String;
+        
+        /**
+         * Недокументированный параметр
+         */ 
+        public var lc_name:String;
+        
+        /**
+         * Недокументированный параметр.
+         */ 
+        public var debug:String;
+        
+        /**
+         * Недокументированный параметр.
+         */ 
+        public var scale:String;
+        
+        /**
+         * Недокументированный параметр.
+         */ 
+        public var swf_url:String;
+        
+        /**
+         * Недокументированный параметр.
+         */ 
+        public var height:String;
+        
+        /**
+         * Недокументированный параметр.
+         */ 
+        public var width:String;
+        
+        /**
+         * Недокументированный параметр.
+         */ 
+        public var domain:String;
+        
+        /**
+         * Недокументированный параметр.
+         */ 
+        public var stageScale:String;
+
     }
     
 }

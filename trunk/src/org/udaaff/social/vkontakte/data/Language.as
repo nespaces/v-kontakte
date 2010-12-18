@@ -17,7 +17,7 @@ package org.udaaff.social.vkontakte.data
     /**
      * Набор констант, определяющих язык.
      */
-    public class Language
+    public final class Language
     {
         
         public static const RUSSIAN:uint = 0;

@@ -28,7 +28,7 @@ package org.udaaff.social.vkontakte.commands
     {
         
         private static const METHOD:String = "getMessages";
-        private static const V:String = "2.0";
+        
         
         //--------------------------------------------------------------------------
         //
@@ -48,10 +48,10 @@ package org.udaaff.social.vkontakte.commands
          */        
         public function GetMessagesCommand(messages_to_get:uint = 0, session:uint = 0)
         {
-            super(METHOD, V);
+            super(METHOD);
             
-            variables.messages_to_get = messages_to_get;
-            variables.session = session;
+            _variables.messages_to_get = messages_to_get;
+            _variables.session = session;
         }
         
         //--------------------------------------------------------------------------
@@ -71,7 +71,7 @@ package org.udaaff.social.vkontakte.commands
          */
         public function get messages_to_get():uint
         {
-            return variables.messages_to_get;
+            return _variables.messages_to_get;
         }
         
         /**
@@ -79,7 +79,7 @@ package org.udaaff.social.vkontakte.commands
          */
         public function set messages_to_get(value:uint):void
         {
-            variables.messages_to_get = value;
+            _variables.messages_to_get = value;
         }
         
         //----------------------------------
@@ -94,7 +94,7 @@ package org.udaaff.social.vkontakte.commands
          */ 
         public function get session():uint
         {
-            return variables.session;
+            return _variables.session;
         }
         
         /**
@@ -102,7 +102,7 @@ package org.udaaff.social.vkontakte.commands
          */        
         public function set session(value:uint):void
         {
-            variables.session = value;
+            _variables.session = value;
         }
         
         //----------------------------------

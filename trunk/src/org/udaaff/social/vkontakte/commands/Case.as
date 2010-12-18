@@ -18,10 +18,10 @@ package org.udaaff.social.vkontakte.commands
      * Класс <code>Case</code> является набором констант, с помощью которых
      * задается падеж для склонения имени и фамилии пользователя.
      * 
-     * @see by.typing.vkontakte.commands.GetProfilesCommand#GetProfilesCommand()
-     * @see by.typing.vkontakte.commands.GetProfilesCommand#name_case
+     * @see org.udaaff.social.vkontakte.commands.GetProfilesCommand#GetProfilesCommand()
+     * @see org.udaaff.social.vkontakte.commands.GetProfilesCommand#name_case
      */
-    public class Case
+    public final class Case
     {
         
         /**

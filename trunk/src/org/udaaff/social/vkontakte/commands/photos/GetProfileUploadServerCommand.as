@@ -27,7 +27,7 @@ package org.udaaff.social.vkontakte.commands.photos
     {
         
         private static const METHOD:String = "photos.getProfileUploadServer";
-        private static const V:String = "2.0";
+        
         
         //--------------------------------------------------------------------------
         //
@@ -40,7 +40,7 @@ package org.udaaff.social.vkontakte.commands.photos
          */        
         public function GetProfileUploadServerCommand()
         {
-            super(METHOD, V);
+            super(METHOD);
         }
         
         

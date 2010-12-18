@@ -28,14 +28,14 @@ package org.udaaff.social.vkontakte.commands
     {
         
         private static const METHOD:String = "getAppFriends";
-        private static const V:String = "2.0";
+        
         
         /**
          * Создает объект <code>GetAppFriendsCommand</code>.
          */        
         public function GetAppFriendsCommand()
         {
-            super(METHOD, V);
+            super(METHOD);
         }
         
         //--------------------------------------------------------------------------

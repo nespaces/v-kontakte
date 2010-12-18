@@ -31,21 +31,21 @@ package org.udaaff.social.vkontakte.net
     /**
      * Отправляется, когда запрос возвращает ошибку.
      * 
-     * @eventType by.typing.vkontakte.errors.VkontakteErrorEvent.ERROR
+     * @eventType org.udaaff.social.vkontakte.errors.VkontakteErrorEvent.ERROR
      */
     [Event(name="error", type="org.udaaff.social.vkontakte.errors.VkontakteErrorEvent")]
     
     /**
      * Отправляется, когда запрос возвращает ответ.
      * 
-     * @eventType by.typing.vkontakte.events.VkontakteResponseEvent.RESPONSE
+     * @eventType org.udaaff.social.vkontakte.events.VkontakteResponseEvent.RESPONSE
      */    
     [Event(name="response", type="org.udaaff.social.vkontakte.events.VkontakteResponseEvent")]
     
 	/**
 	 * 
 	 */
-    public class _VkontakteCall extends URLLoader
+    public class VkontakteCall extends EventDispatcher
     {
         
         
@@ -61,7 +61,7 @@ package org.udaaff.social.vkontakte.net
          * @param method        Название метода API из общего списка функций.
          * @param verision      Версия API.
          */        
-        public function _VkontakteCall(method:String, version:String)
+        public function VkontakteCall(method:String, version:String)
         {
             super();
             
@@ -87,7 +87,7 @@ package org.udaaff.social.vkontakte.net
         
         private var method:String;
         private var v:String;
-//        private var urlLoader:URLLoader;
+        private var urlLoader:URLLoader;
         
         vkontakte_internal var parameters:ApplicationParameters;
         vkontakte_internal var isTestMode:Boolean;
@@ -145,17 +145,17 @@ package org.udaaff.social.vkontakte.net
         //
         //--------------------------------------------------------------------------
         
-//        vkontakte_internal function close():void
-//        {
-//            try 
-//            {
-//                close();
-//            }
-//            catch (error:IOError) 
-//            {
-//                trace(error);
-//            }
-//        }
+        vkontakte_internal function close():void
+        {
+            try 
+            {
+                urlLoader.close();
+            }
+            catch (error:IOError) 
+            {
+                trace(error);
+            }
+        }
         
         vkontakte_internal function execute():void
         {
@@ -170,11 +170,9 @@ package org.udaaff.social.vkontakte.net
             request.data = variables;
             request.method = URLRequestMethod.POST;
             
-//            urlLoader = new URLLoader();
-//            urlLoader.addEventListener(Event.COMPLETE, urlLoader_completeHandler);
-//            urlLoader.load(request);
-            addEventListener(Event.COMPLETE, urlLoader_completeHandler);
-            load(request);
+            urlLoader = new URLLoader();
+            urlLoader.addEventListener(Event.COMPLETE, urlLoader_completeHandler);
+            urlLoader.load(request);
         }
         
         private function urlLoader_completeHandler(event:Event):void

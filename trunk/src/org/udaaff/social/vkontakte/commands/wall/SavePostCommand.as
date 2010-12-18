@@ -20,7 +20,7 @@ package org.udaaff.social.vkontakte.commands.wall
     public class SavePostCommand extends VkontakteCall 
     {
         private static const METHOD:String = "wall.savePost";
-        private static const V:String = "2.0";
+        
         
 //        private var _post_hash:String;
 //        private var _photo_src:String;
@@ -46,16 +46,16 @@ package org.udaaff.social.vkontakte.commands.wall
                                         photo:String = null, hash:String = null, 
                                         photo_id:String = null, message:String = null)
         {
-            super(METHOD, V);
+            super(METHOD);
             
-            variables.wall_id = wall_id;
+            _variables.wall_id = wall_id;
             
-            if (post_id) variables.post_id = post_id;
-            if (server) variables.server = server;
-            if (photo) variables.photo = photo;
-            if (hash) variables.hash = hash;
-            if (photo_id) variables.photo_id = photo_id;
-            if (message) variables.message = message;
+            if (post_id) _variables.post_id = post_id;
+            if (server) _variables.server = server;
+            if (photo) _variables.photo = photo;
+            if (hash) _variables.hash = hash;
+            if (photo_id) _variables.photo_id = photo_id;
+            if (message) _variables.message = message;
         }
         
         //---------------------------------------------------

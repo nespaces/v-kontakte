@@ -27,7 +27,7 @@ package org.udaaff.social.vkontakte.commands
     {
         
         private static const METHOD:String = "getVariable";
-        private static const V:String = "2.0";
+        
         
         //--------------------------------------------------------------------------
         //
@@ -50,13 +50,13 @@ package org.udaaff.social.vkontakte.commands
          */        
         public function GetVariableCommand(key:uint, user_id:String = null, session:uint = 0)
         {
-            super(METHOD, V);
+            super(METHOD);
             
-            variables.key = key;
-            variables.session = session;
+            _variables.key = key;
+            _variables.session = session;
             
             if (user_id)
-                variables.user_id = user_id;
+                _variables.user_id = user_id;
         }
         
         //--------------------------------------------------------------------------
@@ -75,7 +75,7 @@ package org.udaaff.social.vkontakte.commands
          */
         public function get key():uint
         {
-            return variables.key;
+            return _variables.key;
         }
         
         /**
@@ -83,7 +83,7 @@ package org.udaaff.social.vkontakte.commands
          */        
         public function set key(value:uint):void
         {
-            variables.key = value;
+            _variables.key = value;
         }
         
         //----------------------------------
@@ -99,7 +99,7 @@ package org.udaaff.social.vkontakte.commands
          */        
         public function get session():uint
         {
-            return variables.session;
+            return _variables.session;
         }
         
         /**
@@ -107,7 +107,7 @@ package org.udaaff.social.vkontakte.commands
          */        
         public function set session(value:uint):void
         {
-            variables.session = value;
+            _variables.session = value;
         }
         
         //----------------------------------
@@ -122,7 +122,7 @@ package org.udaaff.social.vkontakte.commands
          */        
         public function get user_id():String
         {
-            return variables.user_id;
+            return _variables.user_id;
         }
         
         /**
@@ -130,7 +130,7 @@ package org.udaaff.social.vkontakte.commands
          */        
         public function set user_id(value:String):void
         {
-            variables.user_id = value;
+            _variables.user_id = value;
         }
         
         //----------------------------------

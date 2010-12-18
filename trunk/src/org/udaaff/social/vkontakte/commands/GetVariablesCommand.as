@@ -30,7 +30,7 @@ package org.udaaff.social.vkontakte.commands
     {
         
         private static const METHOD:String = "getVariables";
-        private static const V:String = "2.0";
+        
         
         //--------------------------------------------------------------------------
         //
@@ -55,14 +55,14 @@ package org.udaaff.social.vkontakte.commands
         public function GetVariablesCommand(key:uint, count:uint, 
                                             user_id:String = null, session:uint = 0)
         {
-            super(METHOD, V);
+            super(METHOD);
             
-            variables.key = key;
-            variables.count = count;
-            variables.session = session;
+            _variables.key = key;
+            _variables.count = count;
+            _variables.session = session;
             
             if (user_id)
-                variables.user_id = user_id;
+                _variables.user_id = user_id;
         }
         
         //--------------------------------------------------------------------------
@@ -81,7 +81,7 @@ package org.udaaff.social.vkontakte.commands
          */
         public function get key():uint
         {
-            return variables.key;
+            return _variables.key;
         }
         
         /**
@@ -89,7 +89,7 @@ package org.udaaff.social.vkontakte.commands
          */        
         public function set key(value:uint):void
         {
-            variables.key = value;
+            _variables.key = value;
         }
         
         //----------------------------------
@@ -102,7 +102,7 @@ package org.udaaff.social.vkontakte.commands
          */        
         public function get count():uint
         {
-            return variables.count;
+            return _variables.count;
         }
         
         /**
@@ -110,7 +110,7 @@ package org.udaaff.social.vkontakte.commands
          */
         public function set count(value:uint):void
         {
-            variables.count = value;
+            _variables.count = value;
         }
         
         //----------------------------------
@@ -126,7 +126,7 @@ package org.udaaff.social.vkontakte.commands
          */        
         public function get session():uint
         {
-            return variables.session;
+            return _variables.session;
         }
         
         /**
@@ -134,7 +134,7 @@ package org.udaaff.social.vkontakte.commands
          */        
         public function set session(value:uint):void
         {
-            variables.session = value;
+            _variables.session = value;
         }
         
         //----------------------------------
@@ -149,7 +149,7 @@ package org.udaaff.social.vkontakte.commands
          */        
         public function get user_id():String
         {
-            return variables.user_id;
+            return _variables.user_id;
         }
         
         /**
@@ -157,7 +157,7 @@ package org.udaaff.social.vkontakte.commands
          */        
         public function set user_id(value:String):void
         {
-            variables.user_id = value;
+            _variables.user_id = value;
         }
         //----------------------------------
         //  varInfo
@@ -169,7 +169,7 @@ package org.udaaff.social.vkontakte.commands
          * Массив объектов <code>VarInfoData</code>.
          * Данное свойство заполняется только после операции загрузки ответа.
          * 
-         * @see by.typing.vkontakte.data.VarInfoData
+         * @see org.udaaff.social.vkontakte.data.VarInfoData
          */
         public function get varInfo():Array
         {

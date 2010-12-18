@@ -71,22 +71,15 @@ package org.udaaff.social.vkontakte.data
         /**
          * Публикация на стенах пользователей.
          */        
-        public var wallEnabled:Boolean
+        public var wallEnabled:Boolean;
+        public var statusesEnabled:Boolean;
+        public var notesEnabled:Boolean;
         
         /*<?xml version="1.0" encoding="utf-8"?>
         <response>
             <settings>15</settings>
         </response>*/
         
-        /*+1 – пользователь разрешил отправлять ему уведомления. 
-        +2 – доступ к друзьям. 
-        +4 – доступ к фотографиям. 
-        +8 – доступ к аудиозаписям. 
-        +32 – доступ к предложениям. 
-        +64 – доступ к вопросам. 
-        +128 – доступ к wiki-страницам. 
-        +256 – доступ к меню слева.
-        +512 – публикация на стенах пользователей.*/
         /**
          * @private
          */
@@ -103,6 +96,8 @@ package org.udaaff.social.vkontakte.data
             wikiPagesEnabled = Boolean(settings & Settings.WIKI_PAGES);
             leftMenuEnabled = Boolean(settings & Settings.LEFT_MENU);
             wallEnabled = Boolean(settings & Settings.WALL);
+            statusesEnabled = Boolean(settings & Settings.STATUSES);
+            notesEnabled = Boolean(settings & Settings.NOTES);
         }
 
     }

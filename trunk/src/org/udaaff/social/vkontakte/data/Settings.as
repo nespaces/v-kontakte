@@ -17,18 +17,11 @@ package org.udaaff.social.vkontakte.data
     /**
      * Набор констант, определяющих битовые маски настроек пользователя.
      */ 
-    public class Settings
+    public final class Settings
     {
-        /*+1 – пользователь разрешил отправлять ему уведомления. 
-        +2 – доступ к друзьям. 
-        +4 – доступ к фотографиям. 
-        +8 – доступ к аудиозаписям. 
-        +32 – доступ к предложениям. 
-        +64 – доступ к вопросам. 
-        +128 – доступ к wiki-страницам. 
-        +256 – доступ к меню слева.*/
+    	
         /**
-         * Разрешил ли пользователь отправлять ему уведомления. 
+         * Пользователь разрешил отправлять ему уведомления.
          */    
         public static const NOTICES:uint = 1;
         
@@ -48,6 +41,11 @@ package org.udaaff.social.vkontakte.data
         public static const AUDIO:uint = 8;
         
         /**
+         * Доступ к видеозаписям.
+         */
+        public static const VIDEO:uint = 16; 
+        
+        /**
          * Доступ к предложениям.
          */        
         public static const OFFERS:uint = 32;
@@ -63,14 +61,24 @@ package org.udaaff.social.vkontakte.data
         public static const WIKI_PAGES:uint = 128;
         
         /**
-         * Доступ к меню слева. 
+         * Добавление ссылки на приложение в меню слева.
          */        
         public static const LEFT_MENU:uint = 256;
         
         /**
-         * Публикация на стенах пользователей 
+         * Добавление ссылки на приложение для быстрой публикации на стенах пользователей.
          */        
         public static const WALL:uint = 512;
+        
+        /**
+         * Доступ к статусам пользователя. 
+         */
+        public static const STATUSES:uint = 1024;
+        
+        /**
+         * Доступ к заметкам пользователя.
+         */
+        public static const NOTES:uint = 2048;
         
     }
     

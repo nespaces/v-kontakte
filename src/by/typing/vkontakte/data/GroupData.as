@@ -60,7 +60,7 @@ package by.typing.vkontakte.data
             var xml:XML = XML(data);
             
             gid = xml.gid;
-            name = xml.name;
+            name = xml['name'];
             photo = xml.photo;
             is_closed = Boolean(int(xml.is_closed.toString()));
         }

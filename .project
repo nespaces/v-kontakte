@@ -18,7 +18,7 @@
 		<link>
 			<name>as3corelib</name>
 			<type>2</type>
-			<locationURI>as3corelib</locationURI>
+			<location>F:/svn/as3corelib/src</location>
 		</link>
 	</linkedResources>
 </projectDescription>

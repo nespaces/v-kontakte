@@ -13,18 +13,18 @@
 
 package org.udaaff.social.vkontakte.data
 {
-    
-    /**
-     * Набор констант, определяющих язык.
-     */
-    public final class Language
-    {
-        
-        public static const RUSSIAN:uint = 0;
-        public static const UKRAINIAN:uint = 1;
-        public static const BELARUS:uint = 2;
-        public static const ENGLISH:uint = 3;
-        
-    }
-    
+	
+	/**
+	 * Набор констант, определяющих язык.
+	 */
+	public final class Language
+	{
+		
+		public static const RUSSIAN:uint = 0;
+		public static const UKRAINIAN:uint = 1;
+		public static const BELARUS:uint = 2;
+		public static const ENGLISH:uint = 3;
+		
+	}
+	
 }

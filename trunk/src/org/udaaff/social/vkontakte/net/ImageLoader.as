@@ -113,7 +113,7 @@ package org.udaaff.social.vkontakte.net
 		private var urlRequest:URLRequest;
 		private var fileListClone:Array /* of FileReference */;
 		private var vkontakte:Vkontakte;
-        private var saveBig:Boolean = false;
+		private var saveBig:Boolean = false;
 		
 		//--------------------------------------------------------------------------
 		//
@@ -142,10 +142,10 @@ package org.udaaff.social.vkontakte.net
 		//----------------------------------
 		
 		private var _photos:Array /* of PhotoData */;
-        
-        /**
-         * Массив объектов <code>PhotoData</code>.
-         */
+		
+		/**
+		 * Массив объектов <code>PhotoData</code>.
+		 */
 		public function get photos():Array
 		{
 			return _photos;
@@ -176,16 +176,16 @@ package org.udaaff.social.vkontakte.net
 			if (!fileList)
 				return;
 			
-            _photos = [];
-            
-            fileListClone = [].concat(fileList);
-            
+			_photos = [];
+			
+			fileListClone = [].concat(fileList);
+			
 			// если информация о сервере отсутствует или aid не равен предыдущему
 			// то получаем ее, иначе переходим к этапу загрузки
 			if (!uploadServerData || uploadServerData.aid != aid || this.saveBig != saveBig)
 			{
 				getUploadServer(aid, saveBig);
-                this.saveBig = saveBig;
+				this.saveBig = saveBig;
 				return;
 			}
 			
@@ -267,8 +267,8 @@ package org.udaaff.social.vkontakte.net
 				return;
 			}
 			
-            startUpload();
-            
+			startUpload();
+			
 //			_currentFileReference = FileReference(fileListClone.shift()); 
 //			_currentFileReference.addEventListener(Event.OPEN, openHandler);
 //			_currentFileReference.addEventListener(DataEvent.UPLOAD_COMPLETE_DATA,  uploadCompleteDataHandler);
@@ -288,9 +288,9 @@ package org.udaaff.social.vkontakte.net
 		{
 			uploadServerData = UploadServerData(event.data);
 			
-            urlRequest = new URLRequest(uploadServerData.upload_url);
+			urlRequest = new URLRequest(uploadServerData.upload_url);
 			urlRequest.method = URLRequestMethod.POST;
-            
+			
 			// Стартуем загрузку
 			startUpload();
 		}

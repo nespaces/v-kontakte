@@ -14,27 +14,27 @@
 package org.udaaff.social.vkontakte.data
 {
    
-    /**
-     * Набор констант, определяющих пол пользователя.
-     */
-    public final class Sex
-    {
-        
-        /**
-         * Мужской пол.
-         */
-        public static const MALE:int = 2;
-        
-        /**
-         * Женский пол. 
-         */        
-        public static const FEMALE:int = 1;
-        
-        /**
-         * Пол не указан. 
-         */        
-        public static const NEUTRAL:int = 0;
+	/**
+	 * Набор констант, определяющих пол пользователя.
+	 */
+	public final class Sex
+	{
+		
+		/**
+		 * Мужской пол.
+		 */
+		public static const MALE:int = 2;
+		
+		/**
+		 * Женский пол. 
+		 */		
+		public static const FEMALE:int = 1;
+		
+		/**
+		 * Пол не указан. 
+		 */		
+		public static const NEUTRAL:int = 0;
 
-    }
-    
+	}
+	
 }

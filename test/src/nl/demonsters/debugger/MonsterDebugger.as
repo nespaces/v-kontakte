@@ -204,7 +204,7 @@ package nl.demonsters.debugger
 		//
 		// var debugger:MonsterDebugger = new MonsterDebugger(this);
 		// debugger.logger = function(...args):void {
-		//     trace(args);
+		//	 trace(args);
 		// };
 		public var logger:Function;
 		
@@ -1809,7 +1809,7 @@ package nl.demonsters.debugger
 		protected function enterFrameHandler(event:Event):void
 		{
 			if (isEnabled) {
-            	monitorFrames++;
+				monitorFrames++;
 			}
 		}
 		
@@ -1870,7 +1870,7 @@ package nl.demonsters.debugger
 				}
 				
 				// Return the xml
-                var xml:XML = <a>{s}</a>;
+				var xml:XML = <a>{s}</a>;
 				return xml.toXMLString().replace(/(^<a>)|(<\/a>$)|(^<a\/>$)/g, "");
 			} else {
 				return "";

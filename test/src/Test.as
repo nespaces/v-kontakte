@@ -28,11 +28,11 @@ package
 
 		private static const TEST_PARAMS:Object = 
 			{
-	            api_url: "http://api.vkontakte.ru/api.php",
-	            api_id: "1738195",
-	            viewer_id: "10189183",
-	            secret: "fff7ee0a3e",
-	            sid: "00f06fd4bd6f3f7557bc98774037243e94aea5f08e1d11079941eca69c"
+				api_url: "http://api.vkontakte.ru/api.php",
+				api_id: "1738195",
+				viewer_id: "10189183",
+				secret: "fff7ee0a3e",
+				sid: "00f06fd4bd6f3f7557bc98774037243e94aea5f08e1d11079941eca69c"
 			};
 
 		private var _vk:Vkontakte;
@@ -60,7 +60,7 @@ package
 			getFriends.addEventListener(VkontakteResponseEvent.RESPONSE, getFriends_responseHandler);
 			getFriends.addEventListener(VkontakteErrorEvent.ERROR, errorHandler);
 			getFriends.addEventListener(SecurityErrorEvent.SECURITY_ERROR, securityErrorHandler);
-            getFriends.addEventListener(IOErrorEvent.IO_ERROR, ioErrorHandler);
+			getFriends.addEventListener(IOErrorEvent.IO_ERROR, ioErrorHandler);
 			this._vk.call(getFriends);
 			
 			// тест photos.getUploadServer

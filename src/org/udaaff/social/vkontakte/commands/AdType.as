@@ -13,29 +13,29 @@
 
 package org.udaaff.social.vkontakte.commands
 {
-    
-    /**
-     * Набор констант определяющих значение параметра <code>type</code> 
-     * конструктора класса <code>GetAdsCommand</code>.
-     */ 
-    public final class AdType
-    {
-        
-        /**
-         * Таргетированные объявления. 
-         */        
-        public static const TARGETED:uint = 1;
-        
-        /**
-         * Прямые объявления приложений.
-         */        
-        public static const DIRECT:uint = 2;
-        
-        /**
-         * Все объявления.
-         */        
-        public static const ALL:uint = 3;
-        
-    }
-    
+	
+	/**
+	 * Набор констант определяющих значение параметра <code>type</code> 
+	 * конструктора класса <code>GetAdsCommand</code>.
+	 */ 
+	public final class AdType
+	{
+		
+		/**
+		 * Таргетированные объявления. 
+		 */		
+		public static const TARGETED:uint = 1;
+		
+		/**
+		 * Прямые объявления приложений.
+		 */		
+		public static const DIRECT:uint = 2;
+		
+		/**
+		 * Все объявления.
+		 */		
+		public static const ALL:uint = 3;
+		
+	}
+	
 }

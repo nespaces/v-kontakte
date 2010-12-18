@@ -13,49 +13,49 @@
 
 package org.udaaff.social.vkontakte.data
 {
-    
-    /**
-     * Класс-обертка для информации о городе.
-     */
-    public class CityData extends VkontakteData
-    {
-        
-        //--------------------------------------------------------------------------
-        //
-        //  Constructor
-        //
-        //--------------------------------------------------------------------------
-        
-        /**
-         * Конструктор
-         */
-        public function CityData(xml:XML)
-        {
-            super(xml);
-        }
-        
-        /**
-         * Id города. 
-         */        
-        public var cid:String;
-        
-        /**
-         * Название города. 
-         */        
-        public var name:String;
-        
-        /*<city>
-            <cid>2</cid>
-            <name>Санкт-Петербург</name>
-        </city>*/
-        override protected function parseData(data:*):void
-        {
-            var xml:XML = XML(data);
-            
-            cid = xml.cid;
-            name = xml.name.toString();
-        }
-        
-    }
-    
+	
+	/**
+	 * Класс-обертка для информации о городе.
+	 */
+	public class CityData extends VkontakteData
+	{
+		
+		//--------------------------------------------------------------------------
+		//
+		//  Constructor
+		//
+		//--------------------------------------------------------------------------
+		
+		/**
+		 * Конструктор
+		 */
+		public function CityData(xml:XML)
+		{
+			super(xml);
+		}
+		
+		/**
+		 * Id города. 
+		 */		
+		public var cid:String;
+		
+		/**
+		 * Название города. 
+		 */		
+		public var name:String;
+		
+		/*<city>
+			<cid>2</cid>
+			<name>Санкт-Петербург</name>
+		</city>*/
+		override protected function parseData(data:*):void
+		{
+			var xml:XML = XML(data);
+			
+			cid = xml.cid;
+			name = xml.name.toString();
+		}
+		
+	}
+	
 }

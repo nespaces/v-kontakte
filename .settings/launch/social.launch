@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="com.powerflasher.fdt.ui.CompcGroup">
-<stringAttribute key="ARGUMENTS" value=" -target-player={playerVersion}"/>
+<stringAttribute key="ARGUMENTS" value=" -target-player={playerVersion}&#13;&#10; -include-sources {project}/trunk/src &#13;&#10; -include-sources F:/svn/as3corelib/src/com/adobe/serialization/json&#13;&#10; -include-sources F:/svn/as3corelib/src/com/adobe/utils/ArrayUtil.as&#13;&#10; -include-sources F:/svn/as3corelib/src/com/adobe/utils/IntUtil.as&#13;&#10; -include-sources F:/svn/as3corelib/src/com/adobe/crypto/MD5.as"/>
 <stringAttribute key="LAUNCHER_DEPENDENCIES" value="[Self]"/>
 <stringAttribute key="OUTPUT" value="bin/social.swc"/>
-<booleanAttribute key="PASS_CP" value="true"/>
+<booleanAttribute key="PASS_CP" value="false"/>
 <booleanAttribute key="PASS_RSLS" value="false"/>
-<booleanAttribute key="PASS_SWCS" value="true"/>
+<booleanAttribute key="PASS_SWCS" value="false"/>
 <stringAttribute key="PROJECT_NAME" value="social"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/social"/>

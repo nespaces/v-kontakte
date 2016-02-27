@@ -1,0 +1,1 @@
+ActionScript 3.0 фреймворк для взаимодействия с API Vkontakte.
